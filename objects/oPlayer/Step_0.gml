@@ -13,12 +13,12 @@ if instance_number(oPlayer) == 1 {
 
 //shooting
 if round(hdir) != 0
-aim_dir = round(hdir);
+aim_dir = sign(hdir);
 
 can_shoot -= 1;
 if shoot and can_shoot <= 0 {
 	with instance_create_depth(x+aim_dir*16, y-sprite_height/2, depth+1, oBullet)
-	players_id = other.player_id;
+	hspeed = other.aim_dir*other.bullet_speed;
 	
 	can_shoot = fire_rate;
 }

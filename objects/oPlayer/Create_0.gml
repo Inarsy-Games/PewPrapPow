@@ -23,6 +23,7 @@ alarm[0] = 1; //because there isnt a sprite to check when created
 aim_dir = image_xscale;
 can_shoot = 0;
 fire_rate = 30;
+bullet_speed = 12;
 
 //health
 hp = 10;
