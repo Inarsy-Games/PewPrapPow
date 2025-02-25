@@ -9,10 +9,10 @@ globalvar players;
 players = [
 
 //players obj id, skin index, rounds won, perks
-[0, 0, 0, ["highjump"] ],
-[1, 1, 0, ["highjump"] ],
-[2, 2, 0, ["highjump"] ],
-[3, 3, 0, ["highjump"] ]
+[0, 0, 0, [] ],
+[1, 1, 0, [] ],
+[2, 2, 0, [] ],
+[3, 3, 0, [] ]
 
 ];
 

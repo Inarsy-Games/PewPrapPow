@@ -15,6 +15,10 @@ coyote_buffer = 7;
 jump_buffer = 8;
 jumped = false;
 
+colider_width = 0;
+colider_height = 0;
+alarm[0] = 1; //because there isnt a sprite to check when created
+
 //shooting
 aim_dir = image_xscale;
 can_shoot = 0;
@@ -26,5 +30,12 @@ hit_flash = 0;
 
 //check for perks that need to be checked in here
 //because some'll probably not need to be checked constantly
-if players[player_id][3][0] == "highjump"
-jump_force = -20;
+//if players[player_id][3][0] == "highjump"
+//jump_force = -20;
+
+draw_angle = 0;
+
+//functions because i use the code multiple times
+function draw_player() {
+	draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, draw_angle, c_white, 1);
+}

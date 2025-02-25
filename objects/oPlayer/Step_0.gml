@@ -1,11 +1,19 @@
 //inputs
+hdir = gamepad_axis_value(player_id, gp_axislh);
 jump_held = gamepad_button_check(player_id, gp_face1);
 jump_pressed = gamepad_button_check_pressed(player_id, gp_face1);
 shoot = gamepad_button_check(player_id, gp_face3);
 
+if instance_number(oPlayer) == 1 {
+	hdir = keyboard_check(ord("D"))-keyboard_check(ord("A"));	
+	jump_held = keyboard_check(vk_space);
+	jump_pressed = keyboard_check_pressed(vk_space);
+	shoot = keyboard_check_pressed(vk_shift);
+}
+
 //shooting
-if round(gamepad_axis_value(player_id, gp_axislh)) != 0
-aim_dir = round(gamepad_axis_value(player_id, gp_axislh));
+if round(hdir) != 0
+aim_dir = round(hdir);
 
 can_shoot -= 1;
 if shoot and can_shoot <= 0 {
@@ -16,11 +24,10 @@ if shoot and can_shoot <= 0 {
 }
 
 //move
-var _hdir = gamepad_axis_value(player_id, gp_axislh);
-if _hdir > -0.25 and _hdir < 0.25
-_hdir = 0;
+if hdir > -0.25 and hdir < 0.25
+hdir = 0;
 
-hsp = approach(hsp, _hdir*walk_spd, acc);
+hsp = approach(hsp, hdir*walk_spd, acc);
 
 //gravity
 if vsp < max_vsp
@@ -48,6 +55,16 @@ vsp *= varjumpmod;
 if vsp > 0
 jumped = false;
 
+//make slimmer while jumping to make it easier and junk you know?
+if jumped {
+	image_xscale = 0.25;	
+}
+else {
+	image_xscale = 1;	
+}
+
+
+
 //collision
 if place_meeting(x+hsp, y, oWall) {
 	while !place_meeting(x+sign(hsp), y, oWall) {
@@ -56,6 +73,14 @@ if place_meeting(x+hsp, y, oWall) {
 	hsp = 0;
 }
 x += hsp;
+x = round(x);
+
+var _wall = collision_rectangle(bbox_right, bbox_bottom, x+colider_width/2, bbox_top, oWall, false, false);
+if _wall != noone
+x = _wall.bbox_left-colider_width/2;
+_wall = collision_rectangle(bbox_left, bbox_bottom, x-colider_width/2, bbox_top, oWall, false, false);
+if _wall != noone
+x = _wall.bbox_right+colider_width/2;
 
 if place_meeting(x, y+vsp, oWall) {
 	while !place_meeting(x, y+sign(vsp), oWall) {
@@ -64,6 +89,8 @@ if place_meeting(x, y+vsp, oWall) {
 	vsp = 0;
 }
 y += vsp;
+y = round(y);
+
 
 //perish
 if hp <= 0
