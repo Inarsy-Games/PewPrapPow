@@ -57,10 +57,10 @@ jumped = false;
 
 //make slimmer while jumping to make it easier and junk you know?
 if jumped {
-	image_xscale = 0.25;	
+	image_xscale = 0.25 * -aim_dir;	
 }
 else {
-	image_xscale = 1;	
+	image_xscale = -aim_dir;	
 }
 
 
