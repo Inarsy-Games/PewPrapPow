@@ -4,7 +4,7 @@ jump_held = gamepad_button_check(player_id, gp_face1);
 jump_pressed = gamepad_button_check_pressed(player_id, gp_face1);
 shoot = gamepad_button_check(player_id, gp_face3);
 
-if instance_number(oPlayer) == 1 {
+if keyboard_controls {
 	hdir = keyboard_check(ord("D"))-keyboard_check(ord("A"));	
 	jump_held = keyboard_check(vk_space);
 	jump_pressed = keyboard_check_pressed(vk_space);
@@ -81,10 +81,10 @@ if place_meeting(x+hsp, y, oWall) {
 x += hsp;
 x = round(x);
 
-var _wall = collision_rectangle(bbox_right, bbox_bottom, x+colider_width/2, bbox_top, oWall, false, false);
+var _wall = collision_rectangle(bbox_right, bbox_bottom, (x+colider_width/2)-1, bbox_top, oWall, false, false);
 if _wall != noone
 x = _wall.bbox_left-colider_width/2;
-_wall = collision_rectangle(bbox_left, bbox_bottom, x-colider_width/2, bbox_top, oWall, false, false);
+_wall = collision_rectangle(bbox_left, bbox_bottom, (x-colider_width/2) + 1, bbox_top, oWall, false, false);
 if _wall != noone
 x = _wall.bbox_right+colider_width/2;
 

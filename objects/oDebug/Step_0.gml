@@ -20,6 +20,9 @@ if keyboard_check(vk_tab) {
 	//show collisions
 	if keyboard_check_pressed(ord("C"))
 	show_colider = !show_colider;
+	
+	if keyboard_check_pressed(ord("K"))
+	keyboard_controls = !keyboard_controls;
 
 	
 }
