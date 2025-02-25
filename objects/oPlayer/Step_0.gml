@@ -21,6 +21,12 @@ if shoot and can_shoot <= 0 {
 	hspeed = other.aim_dir*other.bullet_speed;
 	
 	can_shoot = fire_rate;
+	
+	hsp += recoil*-aim_dir;
+	
+	//anim stuff
+	show_flash = 5;
+	flash_angle = irandom_range(-180, 180);
 }
 
 //move

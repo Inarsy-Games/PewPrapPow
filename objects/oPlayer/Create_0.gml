@@ -24,6 +24,7 @@ aim_dir = image_xscale;
 can_shoot = 0;
 fire_rate = 30;
 bullet_speed = 12;
+recoil = 5;
 
 //health
 hp = 10;
@@ -36,6 +37,9 @@ hit_flash = 0;
 
 draw_angle = 0;
 wiggle = 5;
+
+show_flash = 0;
+flash_angle = 0;
 
 //functions because i use the code multiple times
 function draw_player() {

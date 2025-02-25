@@ -6,7 +6,6 @@ if hsp != 0 and place_meeting(x, y+1, oWall) {
 	if draw_angle > _wiggle_range or draw_angle < -_wiggle_range
 	wiggle *= -1;
 	
-	
 	//kick some dusty
 	with instance_create_layer(x+hsp, y, "dust", oDust)
 	hspeed = -other.hsp/random_range(3, 6);
@@ -19,6 +18,7 @@ else {
 	draw_angle = approach(draw_angle, 0, wiggle);	
 }
 
+//draw me self
 draw_player();
 
 //hit flash dawg
@@ -33,7 +33,14 @@ if hit_flash > 0 {
 }
 
 //draw da gun
-draw_sprite_ext(sGun, 0, x+aim_dir*16, y-sprite_height/2, -aim_dir, 1, 0, c_white, 1);
+var _drawx = x + aim_dir*16;
+draw_sprite_ext(sGun, 0, _drawx, y-sprite_height/2, -aim_dir, 1, 0, c_white, 1);
+
+//draw da guns flash when shoot bullet
+show_flash -= 1;
+if show_flash > 0 {
+	draw_sprite_ext(sFlash, 0, _drawx+(sprite_get_width(sGun)/2)*aim_dir, y-sprite_height/2, 1, 1, flash_angle, c_white, 1);	
+}
 
 //show colider
 if show_colider {
