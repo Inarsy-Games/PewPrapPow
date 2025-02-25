@@ -41,7 +41,7 @@ if _gp_connected != 0 {
 		draw_text(room_width/2, room_height/1.25, "Press start to start");
 		
 		if gamepad_button_check_pressed(0, gp_start)
-		room_goto(Room1);
+		room_goto(rTest_room);
 	}
 
 }

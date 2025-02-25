@@ -1,6 +1,6 @@
 //players choose skin
 
-if room == Main_Menu {
+if room == rMainMenu {
 
 	var _gp_num = gamepad_get_device_count();
 

@@ -34,8 +34,9 @@ hit_flash = 0;
 //jump_force = -20;
 
 draw_angle = 0;
+wiggle = 5;
 
 //functions because i use the code multiple times
 function draw_player() {
-	draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, draw_angle, c_white, 1);
+	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, 1, draw_angle, c_white, 1);
 }

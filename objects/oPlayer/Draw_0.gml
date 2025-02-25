@@ -1,3 +1,24 @@
+//do some wiggle
+if hsp != 0 and place_meeting(x, y+1, oWall) {
+	draw_angle += wiggle;
+	
+	var _wiggle_range = 15;
+	if draw_angle > _wiggle_range or draw_angle < -_wiggle_range
+	wiggle *= -1;
+	
+	
+	//kick some dusty
+	with instance_create_layer(x+hsp, y, "dust", oDust)
+	hspeed = -other.hsp/random_range(3, 6);
+	
+}
+else {
+	if wiggle < 0
+	wiggle *= -1;
+	
+	draw_angle = approach(draw_angle, 0, wiggle);	
+}
+
 draw_player();
 
 //hit flash dawg

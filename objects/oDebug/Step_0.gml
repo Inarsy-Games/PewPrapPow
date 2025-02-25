@@ -2,9 +2,9 @@ if keyboard_check(vk_tab) {
 
 	//pick a room
 	if keyboard_check_pressed(ord("1"))
-	room_goto(Main_Menu);
+	room_goto(rMainMenu);
 	if keyboard_check_pressed(ord("2"))
-	room_goto(Room1);
+	room_goto(rTest_room);
 	
 	//make and destroy players
 	if mouse_check_button_pressed(mb_left) {
