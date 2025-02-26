@@ -16,6 +16,9 @@ players = [
 
 ];
 
+//levels
+levels = [rPit1, rPit2];
+
 //functions for stuff
 function create_players() {
 	spawn_points = ds_list_create();

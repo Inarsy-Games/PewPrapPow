@@ -4,7 +4,7 @@ if keyboard_check(vk_tab) {
 	if keyboard_check_pressed(ord("1"))
 	room_goto(rMainMenu);
 	if keyboard_check_pressed(ord("2"))
-	room_goto(rTest_room);
+	room_goto(rPit1);
 	
 	//make and destroy players
 	if mouse_check_button_pressed(mb_left) {

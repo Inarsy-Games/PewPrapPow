@@ -34,12 +34,12 @@ if hit_flash > 0 {
 
 //draw da gun
 var _drawx = x + aim_dir*16;
-draw_sprite_ext(sGun, 0, _drawx, y-sprite_height/2, -aim_dir, 1, 0, c_white, 1);
+draw_sprite_ext(sPistol, 0, _drawx, y-sprite_height/2, -aim_dir, 1, 0, c_white, 1);
 
 //draw da guns flash when shoot bullet
 show_flash -= 1;
 if show_flash > 0 {
-	draw_sprite_ext(sFlash, 0, _drawx+(sprite_get_width(sGun)/2)*aim_dir, y-sprite_height/2, 1, 1, flash_angle, c_white, 1);	
+	draw_sprite_ext(sFlash, 0, _drawx+(sprite_get_width(sPistol)/2)*aim_dir, y-sprite_height/2, 1, 1, flash_angle, c_white, 1);	
 }
 
 //show colider

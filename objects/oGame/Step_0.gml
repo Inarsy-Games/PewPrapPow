@@ -21,3 +21,9 @@ if room == rMainMenu {
 	}
 	
 }
+else { //go to a random room
+	
+	if instance_number(oPlayer) <= 1
+	room_goto(levels[irandom_range(0, array_length(levels)-1)]);
+	
+}

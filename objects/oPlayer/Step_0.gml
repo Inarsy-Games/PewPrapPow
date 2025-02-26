@@ -97,6 +97,14 @@ if place_meeting(x, y+vsp, oWall) {
 y += vsp;
 y = round(y);
 
+//check for bullet hitting you
+//doing it here because the collision box changes dunt it
+var _bullet = collision_rectangle(x-colider_width/2, y-colider_height, x+colider_width/2, y, oBullet, false, true);
+if _bullet != noone {
+	hit_flash = 5;
+	hp -= 1;
+	instance_destroy(_bullet);
+}
 
 //perish
 if hp <= 0
