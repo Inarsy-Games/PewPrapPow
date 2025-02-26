@@ -5,16 +5,23 @@ randomise();
 globalvar player_skins;
 player_skins = [sPlayer1, sPlayer2, sPlayer3, sPlayer4, sPlayer5, sPlayer6, sPlayer7, sPlayer8];
 
+//player data
 globalvar players;
 players = [
 
 //players obj id, skin index, rounds won, perks
-[0, 0, 0, [] ],
-[0, 1, 0, [] ],
-[0, 2, 0, [] ],
-[0, 3, 0, [] ]
+[-1, 0, 0, [] ],
+[-1, 1, 0, [] ],
+[-1, 2, 0, [] ],
+[-1, 3, 0, [] ]
 
 ];
+
+//level transition
+globalvar transition;
+transition = false;
+changed_room = 0;
+trans_y = room_height;
 
 //levels
 levels = [rPit1, rPit2];

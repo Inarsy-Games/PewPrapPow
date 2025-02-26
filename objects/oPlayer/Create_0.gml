@@ -1,5 +1,11 @@
 //make a platformer character speedrun world record
 
+//inputs
+hdir = 0;
+jump_held = 0;
+jump_pressed = 0;
+shoot = 0;
+
 //movement
 hsp = 0;
 vsp = 0;
@@ -27,7 +33,7 @@ bullet_speed = 12;
 recoil = 5;
 
 //health
-hp = 10;
+hp = 5;
 hit_flash = 0;
 
 //check for perks that need to be checked in here

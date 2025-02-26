@@ -1,14 +1,22 @@
 //inputs
-hdir = gamepad_axis_value(player_id, gp_axislh);
-jump_held = gamepad_button_check(player_id, gp_face1);
-jump_pressed = gamepad_button_check_pressed(player_id, gp_face1);
-shoot = gamepad_button_check(player_id, gp_face3);
+if !transition {
+	hdir = gamepad_axis_value(player_id, gp_axislh);
+	jump_held = gamepad_button_check(player_id, gp_face1);
+	jump_pressed = gamepad_button_check_pressed(player_id, gp_face1);
+	shoot = gamepad_button_check(player_id, gp_face3);
 
-if keyboard_controls {
-	hdir = keyboard_check(ord("D"))-keyboard_check(ord("A"));	
-	jump_held = keyboard_check(vk_space);
-	jump_pressed = keyboard_check_pressed(vk_space);
-	shoot = keyboard_check_pressed(vk_shift);
+	if keyboard_controls {
+		hdir = keyboard_check(ord("D"))-keyboard_check(ord("A"));	
+		jump_held = keyboard_check(vk_space);
+		jump_pressed = keyboard_check_pressed(vk_space);
+		shoot = keyboard_check_pressed(vk_shift);
+	}
+}
+else {
+	hdir = 0;
+	jump_held = 0;
+	jump_pressed = 0;
+	shoot = 0;		
 }
 
 //shooting
@@ -17,8 +25,10 @@ aim_dir = sign(hdir);
 
 can_shoot -= 1;
 if shoot and can_shoot <= 0 {
-	with instance_create_depth(x+aim_dir*16, y-sprite_height/2, depth+1, oBullet)
-	hspeed = other.aim_dir*other.bullet_speed;
+	with instance_create_depth(x+aim_dir*16, y-sprite_height/2, depth+1, oBullet) {
+		hspeed = other.aim_dir*other.bullet_speed;
+		players_id = other.player_id;
+	}
 	
 	can_shoot = fire_rate;
 	
