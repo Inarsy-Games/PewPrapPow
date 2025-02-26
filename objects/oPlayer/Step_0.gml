@@ -101,9 +101,11 @@ y = round(y);
 //doing it here because the collision box changes dunt it
 var _bullet = collision_rectangle(x-colider_width/2, y-colider_height, x+colider_width/2, y, oBullet, false, true);
 if _bullet != noone {
-	hit_flash = 5;
-	hp -= 1;
-	instance_destroy(_bullet);
+	if _bullet.players_id != player_id {
+		hit_flash = 5;
+		hp -= 1;
+		instance_destroy(_bullet);
+	}
 }
 
 //perish
