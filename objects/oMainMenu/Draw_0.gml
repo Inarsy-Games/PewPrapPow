@@ -21,13 +21,11 @@ for (var i = 0; i < _gp_num; i++;)
 if _gp_connected != 0 {
 
 	var _spacing = sprite_get_width(sPlayer1)*2;
-	var _x = room_width/2;
 	for (var i = 0; i < _gp_num; i++;)
 	{
 	    if (gamepad_is_connected(i))
 	    {
-			if _gp_connected > 1
-			_x = (room_width/2 - _spacing) + _spacing*i
+			var _x = room_width/2 - _spacing*2 + _spacing*i;
 		
 	        draw_sprite(player_skins[players[i][1]], 0, _x, room_height/1.25);
 			draw_text(_x, room_height/1.25 + sprite_get_height(sPlayer1)/2, "P"+string(i+1));
