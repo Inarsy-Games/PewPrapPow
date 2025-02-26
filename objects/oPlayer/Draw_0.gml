@@ -1,6 +1,6 @@
 //do some wiggle
 if hsp != 0 and place_meeting(x, y+1, oWall) {
-	draw_angle += wiggle;
+	draw_angle += wiggle*hdir;
 	
 	var _wiggle_range = 15;
 	if draw_angle > _wiggle_range or draw_angle < -_wiggle_range
