@@ -48,6 +48,9 @@ if shoot and can_shoot <= 0 {
 			if other.bullet_life != -1
 			life = other.bullet_life;
 			
+			//set damage
+			dmg = other.bullet_damage; 
+			
 			//set the id of the player that created the bullet
 			players_id = other.player_id;
 		}
@@ -149,7 +152,7 @@ var _bullet = collision_rectangle(x-colider_width/2, y-colider_height, x+colider
 if _bullet != noone {
 	if _bullet.players_id != player_id {
 		hit_flash = 5;
-		hp -= 1;
+		hp -= _bullet.dmg;
 		instance_destroy(_bullet);
 	}
 }

@@ -40,11 +40,12 @@ bullets speed,
 bullets life, 
 fire rate 
 bullet_type,
-show bullet flash
+show bullet flash,
+bullets damage
 */
-[sPistol, -1, 1, -1, 5, 12, 20, 30, oBullet, true],
-[sShotgun, 4, 5, [-20, 20],12, 12, 10, 50, oBullet, true],
-[sLandmine, 1, 1, -1, 0, 5, 30, -1, oLandmine, false]
+[sPistol, -1, 1, -1, 5, 12, 20, 30, oBullet, true, 2],
+[sShotgun, 4, 5, [-20, 20],12, 12, 10, 50, oBullet, true, 1],
+[sLandmine, 1, 1, -1, 0, 5, 30, -1, oLandmine, false, 5]
 
 ];
 
@@ -58,6 +59,7 @@ bullet_life = -1;
 fire_rate = -1;
 bullet_type = -1;
 show_flash = false;
+bullet_damage = -1;
 
 //set your stats based on your gun
 function set_stats(_gun) {
@@ -83,6 +85,7 @@ function set_stats(_gun) {
 	fire_rate = gun_stats[_stats_index][7];
 	bullet_type = gun_stats[_stats_index][8];
 	show_flash = gun_stats[_stats_index][9];
+	bullet_damage = gun_stats[_stats_index][10];
 }
 
 //other things for shooting that arent stats/parameters
