@@ -44,7 +44,7 @@ show bullet flash
 */
 [sPistol, -1, 1, -1, 5, 12, 20, 30, oBullet, true],
 [sShotgun, 4, 5, [-20, 20],12, 12, 10, 50, oBullet, true],
-[sLandmine, 1, 1, -1, 0, 5, -1, 30, oLandmine, false]
+[sLandmine, 1, 1, -1, 0, 5, 30, -1, oLandmine, false]
 
 ];
 

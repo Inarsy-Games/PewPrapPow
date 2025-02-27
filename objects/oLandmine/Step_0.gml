@@ -1,5 +1,8 @@
 vspeed += 0.2;
 
+if place_meeting(x+hspeed, y, oWall)
+hspeed *= -1;
+
 if place_meeting(x, y+vspeed, oWall) {
 	hspeed = 0;
 	vspeed = 0;
