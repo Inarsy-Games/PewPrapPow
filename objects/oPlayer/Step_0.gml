@@ -25,18 +25,54 @@ aim_dir = sign(hdir);
 
 can_shoot -= 1;
 if shoot and can_shoot <= 0 {
-	with instance_create_depth(x+aim_dir*16, y-sprite_height/2, depth+1, oBullet) {
-		hspeed = other.aim_dir*other.bullet_speed;
-		players_id = other.player_id;
+	
+	//make as many bullets as bullets_per_shot says
+	for(var i = 0; i < bullets_per_shot; i++) {
+		with instance_create_depth(x+aim_dir*16, y-sprite_height/2, depth+1, bullet_type) {
+			
+			//set direction
+			if other.aim_dir == 1 {
+				direction = 0;	
+			}
+			else if other.aim_dir == -1 {
+				direction = 180;	
+			}
+			
+			if other.angle_range != -1
+			direction += irandom_range(other.angle_range[0], other.angle_range[1]);
+			
+			//set speed
+			speed = other.bullet_speed
+			
+			//set life
+			if other.bullet_life != -1
+			life = other.bullet_life;
+			
+			//set the id of the player that created the bullet
+			players_id = other.player_id;
+		}
 	}
 	
+	//decrease ammo and revert to pistol if runs out of ammo
+	ammo -= 1;
+	if gun != sPistol and ammo <= 0 {
+		gun = sPistol;
+		set_stats(gun);
+	}
+	
+	//fire rate
+	if fire_rate != -1
 	can_shoot = fire_rate;
 	
+	//recoil
+	if recoil != -1
 	hsp += recoil*-aim_dir;
 	
 	//anim stuff
-	show_flash = 5;
-	flash_angle = irandom_range(-180, 180);
+	if show_flash {
+		show_flash = 5;
+		flash_angle = irandom_range(-180, 180);
+	}
 }
 
 //move

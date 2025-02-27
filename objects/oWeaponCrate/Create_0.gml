@@ -5,5 +5,5 @@ while place_meeting(x, y, oWall) {
 
 grv = 0.2;
 
-weapons = [sLandmine, sShotgun, sPistol];
+weapons = [sLandmine, sShotgun];
 weapon = weapons[irandom_range(0, array_length(weapons)-1)];

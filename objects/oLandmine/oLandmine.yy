@@ -1,15 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"oWeaponPickup",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"oLandmine",
+  "eventList":[],
   "managed":true,
-  "name":"oWeaponPickup",
+  "name":"oLandmine",
   "overriddenProperties":[],
   "parent":{
-    "name":"pickups",
-    "path":"folders/Objects/weapons/pickups.yy",
+    "name":"ammo types",
+    "path":"folders/Objects/weapons/ammo types.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sLandmine",
+    "path":"sprites/sLandmine/sLandmine.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

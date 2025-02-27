@@ -10,8 +10,8 @@
   "name":"oBullet",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"ammo types",
+    "path":"folders/Objects/weapons/ammo types.yy",
   },
   "parentObjectId":null,
   "persistent":false,

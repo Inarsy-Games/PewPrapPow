@@ -8,8 +8,8 @@
   "name":"oWeaponSpawner",
   "overriddenProperties":[],
   "parent":{
-    "name":"weapons",
-    "path":"folders/Objects/weapons.yy",
+    "name":"pickups",
+    "path":"folders/Objects/weapons/pickups.yy",
   },
   "parentObjectId":null,
   "persistent":false,

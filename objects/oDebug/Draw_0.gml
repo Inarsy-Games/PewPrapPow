@@ -1,1 +1,0 @@
-draw_text(mouse_x, mouse_y, instance_number(oWeaponCrate));
