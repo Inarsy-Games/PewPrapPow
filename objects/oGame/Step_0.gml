@@ -23,7 +23,7 @@ if room == rMainMenu {
 }
 else { //go to a random room
 	
-	if instance_number(oPlayer) <= 1 and !transition {
+	if instance_number(oPlayer) <= 1 and !transition and !no_transition {
 		
 		if instance_number(oPlayer) == 1 {
 			players[oPlayer.player_id][2] += 1;	

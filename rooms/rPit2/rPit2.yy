@@ -10,7 +10,6 @@
     {"name":"inst_1983620D_1","path":"rooms/rPit2/rPit2.yy",},
     {"name":"inst_4F2A86A2_1","path":"rooms/rPit2/rPit2.yy",},
     {"name":"inst_86CF3D8_1","path":"rooms/rPit2/rPit2.yy",},
-    {"name":"inst_2DDB5879_1","path":"rooms/rPit2/rPit2.yy",},
     {"name":"inst_7C18F5C4_1","path":"rooms/rPit2/rPit2.yy",},
     {"name":"inst_6DE1EDD7_1","path":"rooms/rPit2/rPit2.yy",},
     {"name":"inst_3CF0B8D6_1","path":"rooms/rPit2/rPit2.yy",},
@@ -30,6 +29,7 @@
     {"name":"inst_7FC18DC4","path":"rooms/rPit2/rPit2.yy",},
     {"name":"inst_12D2A163","path":"rooms/rPit2/rPit2.yy",},
     {"name":"inst_4DDC8C","path":"rooms/rPit2/rPit2.yy",},
+    {"name":"inst_2DDB5879_1","path":"rooms/rPit2/rPit2.yy",},
   ],
   "isDnd":false,
   "layers":[

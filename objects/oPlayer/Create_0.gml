@@ -26,6 +26,7 @@ colider_height = 0;
 alarm[0] = 1; //because there isnt a sprite to check when created
 
 //shooting
+gun = sPistol;
 aim_dir = image_xscale;
 can_shoot = 0;
 fire_rate = 30;

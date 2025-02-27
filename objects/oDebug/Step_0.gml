@@ -23,6 +23,9 @@ if keyboard_check(vk_tab) {
 	
 	if keyboard_check_pressed(ord("K"))
 	keyboard_controls = !keyboard_controls;
+	
+	if keyboard_check_pressed(ord("T"))
+	no_transition = !no_transition;
 
 	
 }
