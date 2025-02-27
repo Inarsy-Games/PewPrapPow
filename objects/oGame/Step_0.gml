@@ -23,7 +23,10 @@ if room == rMainMenu {
 }
 else { //go to a random room
 	
-	if instance_number(oPlayer) <= 1 and !transition and !no_transition {
+	if instance_number(oPlayer) <= 1
+	round_over += 1;
+	
+	if round_over > 60 and !transition and !no_transition {
 		
 		if instance_number(oPlayer) == 1 {
 			players[oPlayer.player_id][2] += 1;	
@@ -33,6 +36,7 @@ else { //go to a random room
 		transition = true;
 		trans_y = room_height;
 		changed_room = 0;
+		round_over = 0;
 		//room_goto(levels[irandom_range(0, array_length(levels)-1)]);
 	
 	}

@@ -22,6 +22,7 @@ globalvar transition;
 transition = false;
 changed_room = 0;
 trans_y = room_height;
+round_over = 0;
 
 //levels
 levels = [rPit1, rPit2];
