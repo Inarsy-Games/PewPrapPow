@@ -50,6 +50,3 @@ if show_colider {
 	_col = c_red;
 	draw_rectangle_colour(bbox_right, bbox_bottom, x+colider_width/2, bbox_top, _col, _col, _col, _col, true);
 }
-
-//remove this
-draw_text(x, y, bullet_type);
