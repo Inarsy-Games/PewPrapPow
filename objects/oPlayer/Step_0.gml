@@ -19,8 +19,12 @@ else {
 	shoot = 0;		
 }
 
+//deadzone
+if hdir > -0.25 and hdir < 0.25
+hdir = 0;
+
 //shooting
-if round(hdir) != 0
+if sign(hdir) != 0
 aim_dir = sign(hdir);
 
 can_shoot -= 1;
@@ -78,9 +82,6 @@ if shoot and can_shoot <= 0 {
 }
 
 //move
-if hdir > -0.25 and hdir < 0.25
-hdir = 0;
-
 hsp = approach(hsp, hdir*walk_spd, acc);
 
 //gravity
