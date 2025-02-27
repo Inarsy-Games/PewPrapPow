@@ -5,7 +5,7 @@ if !transition {
 	jump_pressed = gamepad_button_check_pressed(player_id, gp_face1);
 	shoot = gamepad_button_check(player_id, gp_face3);
 
-	if keyboard_controls {
+	if keyboard_controls { //this is a debug thing so I can test without needing a controller
 		hdir = keyboard_check(ord("D"))-keyboard_check(ord("A"));	
 		jump_held = keyboard_check(vk_space);
 		jump_pressed = keyboard_check_pressed(vk_space);
@@ -56,13 +56,6 @@ if shoot and can_shoot <= 0 {
 		}
 	}
 	
-	//decrease ammo and revert to pistol if runs out of ammo
-	ammo -= 1;
-	if gun != sPistol and ammo <= 0 {
-		gun = sPistol;
-		set_stats(gun);
-	}
-	
 	//fire rate
 	if fire_rate != -1
 	can_shoot = fire_rate;
@@ -72,10 +65,16 @@ if shoot and can_shoot <= 0 {
 	hsp += recoil*-aim_dir;
 	
 	//anim stuff
-	if show_flash {
-		show_flash = 5;
-		flash_angle = irandom_range(-180, 180);
+	show_flash = flash_dur;
+	flash_angle = irandom_range(-180, 180);
+	
+	//decrease ammo and revert to pistol if runs out of ammo
+	ammo -= 1;
+	if gun != sPistol and ammo <= 0 {
+		gun = sPistol;
+		set_stats(gun);
 	}
+	
 }
 
 //move

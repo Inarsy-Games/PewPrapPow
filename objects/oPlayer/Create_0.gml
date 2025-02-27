@@ -43,9 +43,9 @@ bullet_type,
 show bullet flash,
 bullets damage
 */
-[sPistol, -1, 1, -1, 5, 12, 20, 30, oBullet, true, 2],
-[sShotgun, 4, 5, [-20, 20],12, 12, 10, 50, oBullet, true, 1],
-[sLandmine, 1, 1, -1, 0, 5, 30, -1, oLandmine, false, 5]
+[sPistol, -1, 1, -1, 5, 12, 20, 30, oBullet, 5, 2],
+[sShotgun, 4, 5, [-20, 20],12, 12, 10, 50, oBullet, 5, 1],
+[sLandmine, 1, 1, -1, 0, 5, 30, 20, oLandmine, -1, 5]
 
 ];
 
@@ -58,7 +58,7 @@ bullet_speed = -1;
 bullet_life = -1;
 fire_rate = -1;
 bullet_type = -1;
-show_flash = false;
+flash_dur = -1;
 bullet_damage = -1;
 
 //set your stats based on your gun
@@ -84,7 +84,7 @@ function set_stats(_gun) {
 	bullet_life = gun_stats[_stats_index][6];
 	fire_rate = gun_stats[_stats_index][7];
 	bullet_type = gun_stats[_stats_index][8];
-	show_flash = gun_stats[_stats_index][9];
+	flash_dur = gun_stats[_stats_index][9];
 	bullet_damage = gun_stats[_stats_index][10];
 }
 
@@ -95,7 +95,7 @@ can_shoot = 0;
 set_stats(gun);
 
 //health-
-hp = 5;
+hp = 10;
 hit_flash = 0;
 
 //check for perks that need to be checked in here

@@ -36,9 +36,10 @@ if hit_flash > 0 {
 var _drawx = x + aim_dir*16;
 draw_sprite_ext(gun, 0, _drawx, y-sprite_height/2, -aim_dir, 1, 0, c_white, 1);
 
+
 //draw da guns flash when shoot bullet
 show_flash -= 1;
-if show_flash > 0 {
+if show_flash > 0 and flash_dur != -1 {
 	draw_sprite_ext(sFlash, 0, _drawx+(sprite_get_width(gun)/2)*aim_dir, y-sprite_height/2, 1, 1, flash_angle, c_white, 1);	
 }
 
@@ -50,3 +51,6 @@ if show_colider {
 	_col = c_red;
 	draw_rectangle_colour(bbox_right, bbox_bottom, x+colider_width/2, bbox_top, _col, _col, _col, _col, true);
 }
+
+if player_id == 0
+draw_text(mouse_x, mouse_y, flash_dur)

@@ -1,6 +1,10 @@
 //randomize
 randomise();
 
+//all the weapons that can spawn
+globalvar weapons;
+weapons = [sLandmine, sShotgun];
+
 //player sprites
 globalvar player_skins;
 player_skins = [sPlayer1, sPlayer2, sPlayer3, sPlayer4, sPlayer5, sPlayer6, sPlayer7, sPlayer8];

@@ -26,6 +26,17 @@ if keyboard_check(vk_tab) {
 	
 	if keyboard_check_pressed(ord("T"))
 	no_transition = !no_transition;
-
 	
+	//spawn weapons
+	weapon_to_spawn += mouse_check_button_pressed(mb_side1)-mouse_check_button_pressed(mb_side2);
+	
+	if weapon_to_spawn < 0
+	weapon_to_spawn = array_length(weapons)-1;
+	if weapon_to_spawn > array_length(weapons)-1
+	weapon_to_spawn = 0;
+	
+	if mouse_check_button_pressed(mb_right) {
+		with instance_create_depth(mouse_x, mouse_y, depth, oWeaponPickup)	
+		sprite_index = weapons[other.weapon_to_spawn];
+	}
 }
