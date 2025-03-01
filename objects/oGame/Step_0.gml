@@ -37,6 +37,7 @@ else { //go to a random room
 		trans_y = room_height;
 		changed_room = 0;
 		round_over = 0;
+		round_over = 0;
 		//room_goto(levels[irandom_range(0, array_length(levels)-1)]);
 	
 	}

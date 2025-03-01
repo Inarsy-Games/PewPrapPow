@@ -5,3 +5,5 @@ for (var i = 0; i < irandom_range(3, 6); i++) {
 }
 
 image_speed = 0.5;
+
+image_index = choose(c_white, c_orange, c_yellow);
