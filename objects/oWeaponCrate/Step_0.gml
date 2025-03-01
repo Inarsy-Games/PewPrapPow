@@ -8,4 +8,10 @@ if place_meeting(x, y+vspeed, oWall) {
 	}
 	
 	instance_destroy(id);
+	
+	//particles
+	for(var i = 0; i < irandom_range(3, 5); i++) {
+		instance_create_layer(x, y, "dust", oPlank);	
+	}
+	
 }

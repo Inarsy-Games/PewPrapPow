@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"oWeaponPickup",
+  "%Name":"oCratePortal",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oWeaponPickup",
+  "name":"oCratePortal",
   "overriddenProperties":[],
   "parent":{
     "name":"pickups",
@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sCratePortal",
+    "path":"sprites/sCratePortal/sCratePortal.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
