@@ -45,6 +45,8 @@ if shoot and can_shoot <= 0 {
 			if other.angle_range != -1
 			direction += irandom_range(other.angle_range[0], other.angle_range[1]);
 			
+			image_angle = direction;
+			
 			//set speed
 			speed = other.bullet_speed
 			

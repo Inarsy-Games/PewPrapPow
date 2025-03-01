@@ -21,9 +21,11 @@ if keyboard_check(vk_tab) {
 	if keyboard_check_pressed(ord("C"))
 	show_colider = !show_colider;
 	
+	//acticate keyboard control
 	if keyboard_check_pressed(ord("K"))
 	keyboard_controls = !keyboard_controls;
 	
+	//disable moving level
 	if keyboard_check_pressed(ord("T"))
 	no_transition = !no_transition;
 	
