@@ -1,22 +1,21 @@
-//do some wiggle
-if hsp != 0 and place_meeting(x, y+1, oWall) {
-	draw_angle += wiggle*hdir;
+//set sprites and animations
+
+if vdir == 0
+top_index = 0;
+else if vdir == -1
+top_index = 1;
+else if vdir == 1
+top_index = 2;
+
+if place_meeting(x, y+1, oWall) {
 	
-	var _wiggle_range = 15;
-	if draw_angle > _wiggle_range or draw_angle < -_wiggle_range
-	wiggle *= -1;
-	
-	//kick some dusty
-	with instance_create_layer(x+hsp, y, "dust", oDust)
-	hspeed = -other.hsp/random_range(3, 6);
-	
+	if hsp == 0 
+	bottom_half = sPlayerLegs;	
+	else
+	bottom_half = sPlayerRun;
 }
-else {
-	if wiggle < 0
-	wiggle *= -1;
-	
-	draw_angle = approach(draw_angle, 0, wiggle);	
-}
+else
+bottom_half = sPlayerAir;
 
 //draw me self
 draw_player();
@@ -30,17 +29,6 @@ if hit_flash > 0 {
 	draw_player();
 	gpu_set_fog(false, c_white, 0, 0);
 	
-}
-
-//draw da gun
-var _drawx = x + aim_dir*16;
-draw_sprite_ext(gun, 0, _drawx, y-sprite_height/2, -aim_dir, 1, 0, c_white, 1);
-
-
-//draw da guns flash when shoot bullet
-show_flash -= 1;
-if show_flash > 0 and flash_dur != -1 {
-	draw_sprite_ext(sFlash, 0, _drawx+(sprite_get_width(gun)/2)*aim_dir, y-sprite_height/2, 1, 1, flash_angle, c_white, 1);	
 }
 
 //show colider

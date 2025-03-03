@@ -4,7 +4,7 @@ if keyboard_check(vk_tab) {
 	if keyboard_check_pressed(ord("1"))
 	room_goto(rMainMenu);
 	if keyboard_check_pressed(ord("2"))
-	room_goto(rPit1);
+	room_goto(rPit2);
 	
 	//make and destroy players
 	if mouse_check_button_pressed(mb_left) {
@@ -12,8 +12,7 @@ if keyboard_check(vk_tab) {
 			instance_destroy(instance_nearest(mouse_x, mouse_y, oPlayer));	
 		}
 		else {
-			with instance_create_depth(mouse_x, mouse_y, depth, oPlayer)
-			sprite_index = sPlayer1;
+			instance_create_depth(mouse_x, mouse_y, depth, oPlayer)
 		}
 	}
 	

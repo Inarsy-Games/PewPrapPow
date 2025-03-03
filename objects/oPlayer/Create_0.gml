@@ -2,17 +2,18 @@
 
 //inputs
 hdir = 0;
+vdir = 0;
 jump_held = 0;
 jump_pressed = 0;
-shoot = 0;
+spit = 0;
 
 //movement
 hsp = 0;
 vsp = 0;
-walk_spd = 5;
+walk_spd = 4;
 acc = 0.5;
-jump_force = -8;
-grv = 0.5;
+jump_force = -7;
+grv = 0.4;
 max_vsp = 9;
 varjumpmod = 0.7;
 jump = 0;
@@ -25,25 +26,25 @@ colider_width = 0;
 colider_height = 0;
 alarm[0] = 1; //because there isnt a sprite to check when created
 
-//shooting-
+//spiting-
 
 //the stats for each weapon
 gun_stats = [
 
 /*
-the gun/sprite,
-ammo,
-bullets per shot,
-bullet angle range,
-recoil per shot, 
-bullets speed, 
-bullets life, 
-fire rate 
-bullet_type,
-show bullet flash,
-bullets damage
-*/
-[sPistol, -1, 1, -1, 5, 12, 20, 30, oBullet, 5, 2],
+the gun/sprite, 0
+ammo, 1
+bullets per shot, 2
+bullet angle range, 3
+recoil per shot, 4
+bullets speed, 5
+bullets life, 6
+fire rate, 7
+bullet_type, 8
+show bullet flash, 9
+bullets damage 10
+*/ //0,   1, 2,  3, 4,  5,  6,  7,   8,     9, 10
+[sPistol, -1, 1, -1, 0, 6, 20, 30, oBullet, 5, 2],
 [sShotgun, 4, 5, [-20, 20],12, 12, 10, 50, oBullet, 5, 1],
 [sLandmine, 1, 1, -1, 0, 5, 30, 20, oLandmine, -1, 5]
 
@@ -88,29 +89,28 @@ function set_stats(_gun) {
 	bullet_damage = gun_stats[_stats_index][10];
 }
 
-//other things for shooting that arent stats/parameters
+//other things for spiting that arent stats/parameters
 gun = sPistol;
 aim_dir = image_xscale;
-can_shoot = 0;
+can_spit = 0;
 set_stats(gun);
 
 //health-
 hp = 10;
 hit_flash = 0;
 
-//check for perks that need to be checked in here
-//because some'll probably not need to be checked constantly
-//if players[player_id][3][0] == "highjump"
-//jump_force = -20;
-
 //animation/drawing-
 
 draw_angle = 0;
-wiggle = 5;
 show_flash = 0;
 flash_angle = 0;
 //hit flash variable is under health stuff
 
+top_half = sPlayerIdle;
+bottom_half = sPlayerLegs;
+top_index = 0;
+
 function draw_player() {
-	draw_sprite_ext(sprite_index, image_index, x, y, sign(image_xscale), 1, draw_angle, c_white, 1);
+	draw_sprite_ext(bottom_half, image_index, x, y, sign(image_xscale), 1, draw_angle, c_white, 1);
+	draw_sprite_ext(top_half, top_index, x, y, sign(image_xscale), 1, draw_angle, c_white, 1);
 }

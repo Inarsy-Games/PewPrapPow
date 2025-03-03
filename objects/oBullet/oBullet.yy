@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sBullet",
-    "path":"sprites/sBullet/sBullet.yy",
+    "name":"sSpit",
+    "path":"sprites/sSpit/sSpit.yy",
   },
   "spriteMaskId":null,
   "visible":true,

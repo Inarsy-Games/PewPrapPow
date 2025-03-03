@@ -5,10 +5,6 @@ randomise();
 globalvar weapons;
 weapons = [sLandmine, sShotgun];
 
-//player sprites
-globalvar player_skins;
-player_skins = [sPlayer1, sPlayer2, sPlayer3, sPlayer4, sPlayer5, sPlayer6, sPlayer7, sPlayer8];
-
 //player data
 globalvar players;
 players = [
@@ -51,7 +47,6 @@ function create_players() {
 			_player = instance_create_depth(_spawn.x, _spawn.y, depth, oPlayer);
 			with _player {
 				player_id = i;
-				sprite_index = player_skins[players[i][1]];
 			}
 			
 			players[i][0] = _player;

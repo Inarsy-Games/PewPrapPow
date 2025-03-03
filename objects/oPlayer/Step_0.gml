@@ -1,34 +1,38 @@
 //inputs
 if !transition {
 	hdir = gamepad_axis_value(player_id, gp_axislh);
+	vdir = gamepad_axis_value(player_id, gp_axislv);
 	jump_held = gamepad_button_check(player_id, gp_face1);
 	jump_pressed = gamepad_button_check_pressed(player_id, gp_face1);
-	shoot = gamepad_button_check(player_id, gp_face3);
+	spit = gamepad_button_check(player_id, gp_face3);
 
 	if keyboard_controls { //this is a debug thing so I can test without needing a controller
 		hdir = keyboard_check(ord("D"))-keyboard_check(ord("A"));	
+		vdir = keyboard_check(ord("S"))-keyboard_check(ord("W"));	
 		jump_held = keyboard_check(vk_space);
 		jump_pressed = keyboard_check_pressed(vk_space);
-		shoot = keyboard_check_pressed(vk_shift);
+		spit = keyboard_check_pressed(vk_shift);
 	}
 }
 else {
 	hdir = 0;
 	jump_held = 0;
 	jump_pressed = 0;
-	shoot = 0;		
+	spit = 0;		
 }
 
 //deadzone
 if hdir > -0.25 and hdir < 0.25
 hdir = 0;
+if vdir > -0.25 and vdir < 0.25
+vdir = 0;
 
-//shooting
+//spiting
 if sign(hdir) != 0
 aim_dir = sign(hdir);
 
-can_shoot -= 1;
-if shoot and can_shoot <= 0 {
+can_spit -= 1;
+if spit and can_spit <= 0 {
 	
 	//make as many bullets as bullets_per_shot says
 	for(var i = 0; i < bullets_per_shot; i++) {
@@ -65,7 +69,7 @@ if shoot and can_shoot <= 0 {
 	
 	//fire rate
 	if fire_rate != -1
-	can_shoot = fire_rate;
+	can_spit = fire_rate;
 	
 	//recoil
 	if recoil != -1

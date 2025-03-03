@@ -34,7 +34,13 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
-  "spriteMaskId":null,
+  "spriteId":{
+    "name":"sPlayerRun",
+    "path":"sprites/sPlayerRun/sPlayerRun.yy",
+  },
+  "spriteMaskId":{
+    "name":"sPlayerIdle",
+    "path":"sprites/sPlayerIdle/sPlayerIdle.yy",
+  },
   "visible":true,
 }
