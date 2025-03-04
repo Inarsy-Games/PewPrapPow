@@ -36,7 +36,7 @@ if spit and can_spit <= 0 {
 	
 	//make as many bullets as bullets_per_shot says
 	for(var i = 0; i < bullets_per_shot; i++) {
-		with instance_create_depth(x+aim_dir*16, y-sprite_height/2, depth+1, bullet_type) {
+		with instance_create_depth(x, y-sprite_height/2, depth+1, bullet_type) {
 			
 			//set direction
 			if other.aim_dir == 1 {

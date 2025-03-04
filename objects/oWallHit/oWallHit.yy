@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sWallHit",
-    "path":"sprites/sWallHit/sWallHit.yy",
+    "name":"sSpitSplash",
+    "path":"sprites/sSpitSplash/sSpitSplash.yy",
   },
   "spriteMaskId":null,
   "visible":true,

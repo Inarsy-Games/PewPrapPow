@@ -17,6 +17,11 @@ if place_meeting(x, y+1, oWall) {
 else
 bottom_half = sPlayerAir;
 
+if can_spit > 0
+top_half = sPlayerSpit;
+else
+top_half = sPlayerIdle;
+
 //draw me self
 draw_player();
 
